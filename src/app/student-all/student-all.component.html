@@ -1,0 +1,25 @@
+<h3> ALL STUDENTS</h3>
+<table class="table">
+    <tr class="bg-info text-white">
+        <th>ID</th>
+        <th>NAME</th>
+        <th>FEE</th>
+        <th>COURSE</th>  
+        <th>DISCOUNT</th>
+        <th>GST</th>
+        <th>OPERATION</th>
+    </tr>
+    <tr *ngFor="let s of students">
+        <td>{{s.stdId}}</td>
+        <td>{{s.stdName}}</td>
+        <td>{{s.stdFee}}</td>
+        <td>{{s.stdCourse}}</td>
+        <td>{{s.stdFeeDisc}}</td> 
+        <td>{{s.stdFeeGst}}</td>
+        <td>
+            <button class="btn btn-success">Edit</button> |
+            <button class="btn btn-danger" (click) = 'deleteStudent(s.stdId)'>Delete</button>
+        </td>
+    </tr>
+</table>
+{{message}}

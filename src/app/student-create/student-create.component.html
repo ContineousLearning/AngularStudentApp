@@ -1,0 +1,38 @@
+<div class="card my-5">
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" [(ngModel)]="student.stdName" 
+            class="form-control" 
+            id="name" 
+            name="stdName" 
+            placeholder="Enter your name"
+            required #name="ngModel">
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Fee</label>
+          <input type="text" [(ngModel)]="student.stdFee" 
+            class="form-control" 
+            id="fee" 
+            name="stdFee" 
+            placeholder="Enter fee details"
+            required #fee="ngModel">
+          
+        </div>
+        <div class="form-group">
+            <label for="email">Course</label>
+            <input type="text" [(ngModel)]="student.stdCourse" 
+              class="form-control" 
+              id="course" 
+              name="stdCourse" 
+              placeholder="Enter your course"
+              required #course="ngModel">
+            
+          </div>
+        <button type="submit" [disabled]="!userForm.form.valid" 
+          class="btn btn-info">Submit</button>
+      </form>
+    </div>
+  </div>
